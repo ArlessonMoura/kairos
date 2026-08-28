@@ -1,0 +1,970 @@
+/* ==========================================================================
+   KAIRÓS — Design tokens & estilos
+  Dark Tech + Neon Electric + Human Technology
+  Layout responsivo: Bootstrap utilities
+   ========================================================================== */
+
+:root {
+  /* Cor — base */
+  --kai-paper: #0b0f14; /* fundo principal, carvão quase preto */
+  --kai-paper-alt: #111820; /* fundo alternado das sections */
+  --kai-ink: #f2f7ff; /* texto principal, branco azulado */
+  --kai-ink-soft: #b4c1d1; /* texto secundário */
+  --kai-sage: #7f91a5; /* texto terciário / legendas */
+  --kai-line: #263543; /* bordas sutis */
+
+  /* Cor — marca */
+  --kai-teal: #00e5ff; /* cyan elétrico — tecnologia e conexão */
+  --kai-teal-dark: #07151b;
+  --kai-teal-soft: #12333b; /* superfície cyan escura */
+  --kai-gold: #b7ff3c; /* lime elétrico — o momento certo */
+  --kai-gold-dark: #8be21c;
+  --kai-gold-soft: #203514;
+
+  --kai-surface: #17232d;
+  --kai-white: #f8fbff;
+
+  /* Tipografia */
+  --font-display: 'Fraunces', 'Georgia', serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+
+  /* Espaçamento / forma */
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --shadow-soft: 0 20px 45px -25px rgba(0, 0, 0, 0.65);
+  --shadow-card: 0 12px 30px -18px rgba(0, 0, 0, 0.55);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+html.reduce-motion {
+  scroll-behavior: auto;
+}
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--kai-ink);
+  background-color: var(--kai-paper);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--kai-ink);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--kai-gold-soft);
+  color: var(--kai-gold);
+}
+
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--kai-gold);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 22px;
+  height: 2px;
+  background: var(--kai-gold);
+  border-radius: 2px;
+}
+
+.text-sage {
+  color: var(--kai-sage);
+}
+
+.text-gold {
+  color: var(--kai-gold);
+}
+
+.italic-accent {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--kai-teal);
+}
+
+.section-alt {
+  background-color: var(--kai-paper-alt);
+}
+
+/* ==========================================================================
+   ========================================================================== */
+
+.kai-navbar {
+  padding: 1.1rem 0;
+  background: rgba(11, 15, 20, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color 0.35s var(--ease-out),
+    border-color 0.35s var(--ease-out),
+    padding 0.35s var(--ease-out);
+}
+
+.kai-navbar.is-scrolled {
+  padding: 0.7rem 0;
+  border-bottom-color: var(--kai-line);
+  background: rgba(11, 15, 20, 0.94);
+}
+
+.kai-logo {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: var(--kai-ink);
+}
+
+.kai-logo .kai-logo-dot {
+  width: 25px;
+  height: 25px;
+}
+
+.kai-logo-image {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.kai-nav-links a {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--kai-ink-soft);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.kai-nav-links a:hover {
+  color: var(--kai-teal);
+  background: var(--kai-teal-soft);
+}
+
+.kai-navbar .navbar-collapse.show,
+.kai-navbar .navbar-collapse.collapsing {
+  background: var(--kai-paper-alt);
+  border: 1px solid var(--kai-line);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem 1.2rem;
+  margin-top: 0.7rem;
+  box-shadow: var(--shadow-card);
+}
+
+/* ==========================================================================
+   Botões
+   ========================================================================== */
+
+.btn-kai {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: normal;
+  text-align: center;
+  transition:
+    transform 0.25s var(--ease-out),
+    box-shadow 0.25s var(--ease-out),
+    background-color 0.25s ease;
+}
+
+.btn-kai:active {
+  transform: scale(0.97);
+}
+
+.btn-kai-primary {
+  background: var(--kai-gold);
+  color: var(--kai-teal-dark);
+  box-shadow: 0 16px 30px -14px rgba(183, 255, 60, 0.35);
+}
+
+.btn-kai-primary:hover {
+  background: var(--kai-gold-dark);
+  color: var(--kai-white);
+  transform: translateY(-2px);
+  box-shadow: 0 20px 34px -14px rgba(183, 255, 60, 0.5);
+}
+
+.btn-kai-ghost {
+  background: var(--kai-teal-soft);
+  color: var(--kai-teal);
+}
+
+.btn-kai-ghost:hover {
+  background: var(--kai-teal);
+  color: var(--kai-white);
+  transform: translateY(-2px);
+}
+
+.btn-kai .icon-wa {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+
+.kai-navbar .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.btn-kai-sm {
+  padding: 0.58rem 1.4rem;
+  font-size: 0.92rem;
+}
+
+.kai-navbar .btn-kai-sm {
+  min-width: 178px;
+  white-space: nowrap;
+}
+
+.btn-kai.is-tapped {
+  animation: kai-tap 0.4s var(--ease-out);
+}
+
+@keyframes kai-tap {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(0.94);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+
+.hero {
+  border-bottom: 2px solid var(--kai-gold);
+}
+
+.hero-glow {
+  top: -12%;
+  right: -8%;
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(183, 255, 60, 0.2),
+    rgba(183, 255, 60, 0) 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-glow-2 {
+  bottom: -18%;
+  left: -10%;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 60% 60%,
+    rgba(0, 229, 255, 0.16),
+    rgba(0, 229, 255, 0) 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  max-width: 15.5ch;
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--kai-ink-soft);
+  max-width: 46ch;
+  line-height: 1.6;
+}
+
+.hero-microtrust {
+  font-size: 0.85rem;
+  color: var(--kai-sage);
+  font-weight: 600;
+}
+
+.hero-microtrust .dot-sep {
+  margin: 0 0.55em;
+  opacity: 0.6;
+}
+
+/* ---- Visual do Hero: trilha de evolução ---- */
+
+.kai-path-track {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 19px;
+  width: 2px;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--kai-gold) 0 6px,
+    transparent 6px 13px
+  );
+}
+
+.kai-path-runner {
+  position: absolute;
+  left: 14px;
+  width: 10px;
+  height: 10px;
+  border-right: 6px solid var(--kai-gold);
+  border-bottom: 6px solid var(--kai-gold);
+  filter: drop-shadow(0 0 5px rgba(183, 255, 60, 0.8));
+  transform: rotate(45deg);
+  animation: kai-runner 7s var(--ease-out) infinite;
+}
+
+@keyframes kai-runner {
+  0% {
+    top: 0%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.kai-node {
+  background: var(--kai-surface);
+  border: 1px solid var(--kai-line);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.1rem;
+  box-shadow: var(--shadow-card);
+  transition:
+    transform 0.35s var(--ease-out),
+    box-shadow 0.35s var(--ease-out),
+    border-color 0.35s ease;
+}
+
+.kai-node::before {
+  content: '';
+  position: absolute;
+  left: -1.98rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--kai-paper);
+  border: 2px solid var(--kai-teal);
+}
+
+.kai-node.kai-node-final::before {
+  border-color: var(--kai-gold);
+  background: var(--kai-gold);
+}
+
+.kai-node:hover {
+  transform: translateY(-4px);
+  border-color: var(--kai-gold);
+  box-shadow: 0 20px 38px -18px rgba(183, 255, 60, 0.35);
+}
+
+.kai-node.kai-node-final {
+  background: var(--kai-teal-dark);
+  border-color: var(--kai-teal-dark);
+  color: var(--kai-white);
+}
+
+.kai-node.kai-node-final .kai-node-icon {
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--kai-gold);
+}
+
+.kai-node.kai-node-final .kai-node-label,
+.kai-node.kai-node-final .kai-node-title {
+  color: var(--kai-white);
+}
+
+.kai-node-icon {
+  flex: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--kai-teal-soft);
+  color: var(--kai-teal);
+}
+
+.kai-node-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.kai-node-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--kai-sage);
+  display: block;
+}
+
+.kai-node-title {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--kai-ink);
+  display: block;
+}
+
+/* ==========================================================================
+   Cabeçalhos de section
+   ========================================================================== */
+
+.section-head {
+  max-width: 46rem;
+}
+
+.section-title {
+  font-size: 1.9rem;
+  font-weight: 600;
+}
+
+.section-lead {
+  font-size: 1.08rem;
+  color: var(--kai-ink-soft);
+  line-height: 1.65;
+  max-width: 42rem;
+}
+
+/* ==========================================================================
+   SECTION 1 — cards de comportamento do consumidor
+   ========================================================================== */
+
+.behavior-card {
+  background: var(--kai-surface);
+  border: 1px solid var(--kai-line);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.4rem 1.5rem;
+  height: 100%;
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out),
+    border-color 0.3s ease;
+}
+
+.behavior-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--kai-teal);
+}
+
+.behavior-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: var(--kai-gold-soft);
+  color: var(--kai-gold);
+  margin-bottom: 0.9rem;
+}
+
+.behavior-icon svg {
+  width: 19px;
+  height: 19px;
+}
+
+.behavior-title {
+  font-weight: 700;
+  font-size: 0.98rem;
+  margin-bottom: 0.35rem;
+}
+
+.behavior-text {
+  font-size: 0.92rem;
+  color: var(--kai-ink-soft);
+  line-height: 1.5;
+}
+
+.asset-panel {
+  background: var(--kai-teal-dark);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  color: var(--kai-white);
+}
+
+.asset-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 85% 10%,
+    rgba(183, 255, 60, 0.2),
+    transparent 55%
+  );
+  pointer-events: none;
+}
+
+.asset-list {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.asset-list li {
+  font-size: 0.96rem;
+  color: rgba(255, 255, 255, 0.92);
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.asset-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.asset-check {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--kai-gold);
+  color: var(--kai-teal-dark);
+  margin-top: 0.1rem;
+}
+
+.asset-check svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* ==========================================================================
+   SECTION 2 — ecossistema (trilha de evolução)
+   ========================================================================== */
+
+.eco-step {
+  background: var(--kai-surface);
+  border: 1px solid var(--kai-line);
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.35rem;
+  height: 100%;
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out),
+    border-color 0.3s ease;
+}
+
+.eco-step:hover {
+  transform: translateY(-6px);
+  border-color: var(--kai-gold);
+  box-shadow: var(--shadow-card);
+}
+
+.eco-step-index {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--kai-gold);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.eco-step-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.eco-step-sub {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: var(--kai-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.55rem;
+}
+
+.eco-step-text {
+  font-size: 0.9rem;
+  color: var(--kai-ink-soft);
+  line-height: 1.5;
+}
+
+.eco-callout {
+  background: var(--kai-gold-soft);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+}
+
+.eco-callout-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--kai-ink);
+  max-width: 34rem;
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   SECTION 3 — empregados digitais
+   ========================================================================== */
+
+.employee-card {
+  background: var(--kai-surface);
+  border: 1px solid var(--kai-line);
+  border-radius: var(--radius-lg);
+  padding: 1.7rem 1.5rem;
+  height: 100%;
+  transition:
+    transform 0.3s var(--ease-out),
+    box-shadow 0.3s var(--ease-out),
+    border-color 0.3s ease;
+}
+
+.employee-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-soft);
+  border-color: var(--kai-teal);
+}
+
+.employee-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--kai-teal);
+  background: var(--kai-teal-soft);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.employee-badge .pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--kai-teal);
+  animation: kai-pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes kai-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(1.4);
+  }
+}
+
+.employee-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--kai-teal-dark);
+  color: var(--kai-gold);
+  margin-bottom: 1rem;
+}
+
+.employee-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.employee-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 0.55rem;
+}
+
+.employee-text {
+  font-size: 0.92rem;
+  color: var(--kai-ink-soft);
+  line-height: 1.55;
+}
+
+.digital-employee-banner {
+  background: var(--kai-teal-dark);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  color: var(--kai-white);
+}
+
+.digital-employee-banner .text-sage {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.banner-label {
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.banner-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.banner-quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--kai-gold);
+}
+
+.employee-card-cta {
+  background: var(--kai-teal-soft);
+  border-color: var(--kai-teal);
+}
+
+.employee-card-cta-text {
+  font-size: 0.95rem;
+  color: var(--kai-teal);
+  line-height: 1.55;
+}
+
+/* ==========================================================================
+   CTA final
+   ========================================================================== */
+
+.final-cta {
+  background: var(--kai-teal-dark);
+  border-radius: var(--radius-lg);
+  padding: 2.6rem 1.6rem;
+  color: var(--kai-white);
+  text-align: center;
+}
+
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 60, 172, 0.2), transparent 65%);
+  pointer-events: none;
+}
+
+.final-cta-eyebrow {
+  color: var(--kai-gold);
+  justify-content: center;
+}
+
+.final-cta-eyebrow::before {
+  background: var(--kai-gold);
+}
+
+.final-cta-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--kai-white);
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.final-cta-sub {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 1.05rem;
+  max-width: 36rem;
+  margin: 1.1rem auto 0;
+  line-height: 1.6;
+}
+
+.final-cta-contact {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.88rem;
+}
+
+.footer-tagline {
+  font-size: 0.85rem;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+}
+
+.final-cta .btn-kai-primary {
+  box-shadow: 0 20px 40px -16px rgba(0, 0, 0, 0.45);
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.kai-footer {
+  padding: 2.6rem 0;
+  border-top: 1px solid var(--kai-line);
+}
+
+.kai-footer .kai-logo {
+  font-size: 1.15rem;
+}
+
+.footer-links a {
+  color: var(--kai-ink-soft);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: var(--kai-teal);
+}
+
+/* ==========================================================================
+   WhatsApp botão flutuante
+   ========================================================================== */
+
+.wa-float {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--kai-teal-dark);
+  color: var(--kai-white);
+  box-shadow: 0 16px 32px -12px rgba(0, 0, 0, 0.7);
+  transition:
+    transform 0.3s var(--ease-out),
+    background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(16px) scale(0.9);
+  pointer-events: none;
+}
+
+.wa-float.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.wa-float:hover {
+  background: var(--kai-gold);
+  color: var(--kai-teal-dark);
+  transform: translateY(-3px) scale(1.04);
+}
+
+.wa-float svg {
+  width: 26px;
+  height: 26px;
+}
+
+.wa-float-ring {
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid var(--kai-gold);
+  animation: kai-ring 2.6s var(--ease-out) infinite;
+}
+
+@keyframes kai-ring {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.45);
+  }
+}
+
+/* ==========================================================================
+   Reveal on scroll
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.08s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.16s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.24s;
+}
+.reveal-delay-4 {
+  transition-delay: 0.32s;
+}
+.reveal-delay-5 {
+  transition-delay: 0.4s;
+}
+
+/* Preferência por menos movimento é aplicada pelo JS na classe .reduce-motion. */
+
+html.reduce-motion .reveal {
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+
+html.reduce-motion .wa-float-ring,
+html.reduce-motion .employee-badge .pulse-dot,
+html.reduce-motion .kai-path-runner {
+  animation: none;
+}
+
+html.reduce-motion * {
+  scroll-behavior: auto;
+}
