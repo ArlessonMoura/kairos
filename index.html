@@ -704,7 +704,7 @@
          CTA FINAL
          ========================================================================== -->
       <section class="pt-0 pb-5">
-        <div class="container-fluid w-75 mx-auto px-3 px-lg-4">
+        <div class="container-fluid final-cta-container mx-auto px-3 px-lg-4">
           <div class="final-cta reveal position-relative overflow-hidden">
             <span class="eyebrow final-cta-eyebrow d-inline-flex align-items-center gap-2"
               >Vamos começar?</span
@@ -714,8 +714,8 @@
               próximo passo.
             </h2>
             <p class="final-cta-sub position-relative z-1">
-              Conte pra gente como o seu negócio funciona hoje. A conversa é direta no
-              WhatsApp — sem formulário, sem enrolação.
+              Conte pra gente como o seu negócio funciona hoje. Fale direto no WhatsApp ou
+              deixe seus dados abaixo que entramos em contato.
             </p>
             <div
               class="final-cta-actions mt-4 d-flex justify-content-center flex-wrap position-relative z-1"
@@ -729,6 +729,98 @@
                 Falar com a Kairós
               </a>
             </div>
+
+            <!-- Formulário de contato (Netlify Forms) -->
+            <form
+              id="contato"
+              class="kai-form position-relative z-1 text-start"
+              name="contato"
+              method="POST"
+              action="/"
+              data-netlify="true"
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contato" />
+              <p class="d-none">
+                <label>Não preencha este campo: <input name="bot-field" /></label>
+              </p>
+
+              <p class="kai-form-title">Prefere que a gente entre em contato?</p>
+
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label class="kai-label" for="contato-nome">Nome</label>
+                  <input
+                    class="kai-input"
+                    type="text"
+                    id="contato-nome"
+                    name="nome"
+                    autocomplete="name"
+                    required
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="kai-label" for="contato-email">E-mail</label>
+                  <input
+                    class="kai-input"
+                    type="email"
+                    id="contato-email"
+                    name="email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="kai-label" for="contato-telefone"
+                    >WhatsApp / telefone</label
+                  >
+                  <input
+                    class="kai-input"
+                    type="tel"
+                    id="contato-telefone"
+                    name="telefone"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    maxlength="15"
+                    placeholder="(81) 90000-0000"
+                  />
+                </div>
+                <div class="col-12 col-md-6">
+                  <label class="kai-label" for="contato-empresa">Empresa</label>
+                  <input
+                    class="kai-input"
+                    type="text"
+                    id="contato-empresa"
+                    name="empresa"
+                    autocomplete="organization"
+                  />
+                </div>
+                <div class="col-12">
+                  <label class="kai-label" for="contato-mensagem"
+                    >Como podemos ajudar?</label
+                  >
+                  <textarea
+                    class="kai-input"
+                    id="contato-mensagem"
+                    name="mensagem"
+                    rows="4"
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="mt-4 d-flex flex-column align-items-center gap-3">
+                <button type="submit" class="btn-kai btn-kai-ghost kai-form-submit">
+                  Enviar mensagem
+                </button>
+                <p
+                  class="kai-form-status mb-0"
+                  role="status"
+                  aria-live="polite"
+                  hidden
+                ></p>
+              </div>
+            </form>
             <p class="mt-4 mb-0 final-cta-contact position-relative z-1">
               ou ligue direto: (81) 99890-9050
             </p>

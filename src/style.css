@@ -777,6 +777,16 @@ button:focus-visible,
    CTA final
    ========================================================================== */
 
+.final-cta-container {
+  width: 75%;
+}
+
+@media (max-width: 767.98px) {
+  .final-cta-container {
+    width: 100%;
+  }
+}
+
 .final-cta {
   background: var(--kai-teal-dark);
   border-radius: var(--radius-lg);
@@ -811,7 +821,7 @@ button:focus-visible,
   font-size: 2rem;
   font-weight: 600;
   color: var(--kai-white);
-  max-width: 22ch;
+  max-width: 42ch;
   margin-left: auto;
   margin-right: auto;
 }
@@ -819,7 +829,7 @@ button:focus-visible,
 .final-cta-sub {
   color: rgba(255, 255, 255, 0.78);
   font-size: 1.05rem;
-  max-width: 36rem;
+  max-width: 52rem;
   margin: 1.1rem auto 0;
   line-height: 1.6;
 }
@@ -827,6 +837,65 @@ button:focus-visible,
 .final-cta-contact {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.88rem;
+}
+
+/* Formulário de contato */
+.kai-form {
+  max-width: 40rem;
+  margin: 2.4rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--kai-line);
+}
+
+.kai-form-title {
+  text-align: center;
+  font-weight: 700;
+  color: var(--kai-white);
+  margin-bottom: 1.4rem;
+}
+
+.kai-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--kai-ink-soft);
+}
+
+.kai-input {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  background: var(--kai-paper);
+  color: var(--kai-ink);
+  border: 1px solid var(--kai-line);
+  border-radius: 0.6rem;
+  font: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.kai-input:focus {
+  outline: none;
+  border-color: var(--kai-teal);
+  box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.25);
+}
+
+.kai-form-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.kai-form-status {
+  font-size: 0.92rem;
+}
+
+.kai-form-status[data-state='success'] {
+  color: var(--kai-gold);
+}
+
+.kai-form-status[data-state='error'] {
+  color: #ff8a8a;
 }
 
 .footer-tagline {
