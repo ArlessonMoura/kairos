@@ -881,6 +881,36 @@ button:focus-visible,
   box-shadow: 0 0 0 3px rgba(0, 229, 255, 0.25);
 }
 
+.kai-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.kai-consent-checkbox {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  margin-top: 0.2rem;
+  accent-color: var(--kai-teal);
+}
+
+.kai-consent-checkbox:focus-visible {
+  outline: 2px solid var(--kai-teal);
+  outline-offset: 3px;
+}
+
+.kai-consent-label {
+  color: var(--kai-ink-soft);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.kai-consent-label span {
+  color: var(--kai-white);
+  font-weight: 600;
+}
+
 .kai-form-submit:disabled {
   opacity: 0.6;
   cursor: not-allowed;
